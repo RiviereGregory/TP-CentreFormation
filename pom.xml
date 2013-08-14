@@ -8,7 +8,7 @@
 	<description>TP java pour illustrer spring - hibernate - maven</description>
 
 	<properties>
-		<version.java>1.6</version.java>
+		<version.java>1.7</version.java>
 		<hibernate.version>4.2.3.Final</hibernate.version>
 		<spring.version>3.2.3.RELEASE</spring.version>
 		<version.maven.jar.plugin>2.4</version.maven.jar.plugin>
@@ -69,16 +69,32 @@
 			<version>${spring.version}</version>
 		</dependency>
 
-		<!-- Dépendance Hibernate (hibernate-core et hibernate-entitymanager)  -->
-		
+		<!-- Dépendance Hibernate (hibernate-core et hibernate-entitymanager) -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.2.3.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.2.3.Final</version>
+		</dependency>
+
 		<!-- Base de données MYSQL -->
-		
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.26</version>
+		</dependency>
+
 		<!-- Junit -->
 
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8.2</version>
+			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -105,7 +121,32 @@
 					<mainClass>fr.treeptik.centreformation.runtime.Main</mainClass>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<source>${version.java}</source>
+					<target>${version.java}</target>
+				</configuration>
+			</plugin>
 		</plugins>
+
+
+		<resources>
+			<!-- pour regarder les fichiers que l'on a dans le dossier ressource -->
+			<!-- On peut utiliser les variable Maven dans tous les fichiers contenue 
+				dans les ressources grace à ${nom.variable} -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 	</build>
 
 
