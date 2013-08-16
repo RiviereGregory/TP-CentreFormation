@@ -24,6 +24,27 @@ public class FactureServiceTest {
 	private FactureService service;
 
 	@Test
+	public void testFindBySessionDate() {
+		try {
+			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+			List<Facture> list = service.findByDateSession(dateFormat.parse("31/07/2013"));
+			System.out.println("********** Test FactureService by session date********");
+			for (Facture facture : list) {
+				System.out.println("numero :" + facture.getNumero());
+				System.out.println("Date:" + facture.getDate());
+				System.out.println("Montant:" + facture.getMontant());
+				System.out.println("nombres places:" + facture.getNombresPlaces());
+
+				System.out.println("");
+			}
+
+		} catch (ServiceException | ParseException e) {
+			Assert.fail(e.getMessage());
+		}
+
+	}
+
+	@Test
 	public void testFindAll() {
 		try {
 			List<Facture> list = service.findAll();

@@ -10,4 +10,6 @@ public interface SocieteService extends GenericService<Societe, Integer, Societe
 
 	List<Societe> findAllWithCommande() throws ServiceException;
 
+	List<Societe> findByCodeSeminaire(Integer codeSeminaire) throws ServiceException;
+
 }

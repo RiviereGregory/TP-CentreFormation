@@ -3,6 +3,7 @@ package fr.treeptik.centreformation.dao.impl;
 import java.util.List;
 
 import javax.persistence.PersistenceException;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
@@ -26,6 +27,25 @@ public class SocieteDAOJPA extends GenericDAOJPA<Societe, Integer> implements So
 		} catch (PersistenceException e) {
 			throw new DAOException(e.getMessage(), e.getCause());
 		}
+	}
+
+	@Override
+	public List<Societe> findByCodeSeminaire(Integer codeSeminaire) throws DAOException {
+		List<Societe> list;
+		try {
+			TypedQuery<Societe> query = entityManager.createQuery(
+					"SELECT soc FROM Societe soc LEFT JOIN FETCH soc.commandes com JOIN "
+							+ " com.demandeSatifaite JOIN com.demandeSatifaite.concerner WHERE "
+							+ " com.demandeSatifaite.concerner.code= :code", Societe.class);
+			query.setParameter("code", codeSeminaire);
+
+			list = query.getResultList();
+
+		} catch (PersistenceException e) {
+			throw new DAOException(e.getMessage(), e.getCause());
+		}
+
+		return list;
 	}
 
 }

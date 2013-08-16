@@ -35,4 +35,16 @@ public class SocieteServiceImpl extends GenericServiceImpl<Societe, Integer, Soc
 		return list;
 	}
 
+	@Override
+	public List<Societe> findByCodeSeminaire(Integer codeSeminaire) throws ServiceException {
+		List<Societe> list;
+		try {
+			list = societeDAO.findByCodeSeminaire(codeSeminaire);
+		} catch (DAOException e) {
+			throw new ServiceException(e.getMessage(), e.getCause());
+		}
+
+		return list;
+	}
+
 }

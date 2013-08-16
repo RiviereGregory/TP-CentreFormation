@@ -9,4 +9,6 @@ public interface SocieteDAO extends GenericDAO<Societe, Integer> {
 
 	List<Societe> findAllWithCommande() throws DAOException;
 
+	List<Societe> findByCodeSeminaire(Integer codeSeminaire) throws DAOException;
+
 }
