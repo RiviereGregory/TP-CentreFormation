@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.treeptik.centreformation.exception.ServiceException;
+import fr.treeptik.centreformation.model.Commande;
 import fr.treeptik.centreformation.model.Societe;
 import fr.treeptik.centreformation.service.SocieteService;
 
@@ -20,6 +21,39 @@ public class SocieteServiceTest {
 
 	@Autowired
 	private SocieteService service;
+
+	@Test
+	public void testFindAllWithCommande() {
+		try {
+			List<Societe> list = service.findAllWithCommande();
+			System.out.println("********** Test SocieteService With Commande ********");
+			for (Societe societe : list) {
+				System.out.println("Numero :" + societe.getCode());
+				System.out.println("Nom:" + societe.getNom());
+
+				System.out.println("Commandes :");
+				for (Commande commande : societe.getCommandes()) {
+					System.out.println("numero commande:" + commande.getNumero());
+					System.out.println("date:" + commande.getDate());
+					System.out.println("nombres places:" + commande.getNombresPlaces());
+					System.out.println("generer:" + commande.getGenerer());
+
+					System.out.println("Numero session : "
+							+ commande.getDemandeSatifaite().getNumero());
+					System.out
+							.println("Date session : " + commande.getDemandeSatifaite().getDate());
+
+					System.out.println("");
+				}
+
+				System.out.println("");
+			}
+
+		} catch (ServiceException e) {
+			Assert.fail(e.getMessage());
+		}
+
+	}
 
 	@Test
 	public void testFindAll() {

@@ -23,6 +23,7 @@ public class CommandeServiceTest {
 	@Autowired
 	private CommandeService service;
 
+
 	@Test
 	public void testFindAll() {
 		try {
@@ -34,9 +35,13 @@ public class CommandeServiceTest {
 				System.out.println("nombres places:" + commande.getNombresPlaces());
 				System.out.println("generer:" + commande.getGenerer());
 
-				// Attention au variable détaché (LAZY true)
-				// System.out.println(commande.getPasserCommande());
-				// System.out.println(commande.getDemandeSatifaite());
+				System.out.println("Code societe : " + commande.getPasserCommande().getCode());
+				System.out.println("Nom Societe : " + commande.getPasserCommande().getNom());
+
+				System.out
+						.println("Numero session : " + commande.getDemandeSatifaite().getNumero());
+				System.out.println("Date session : " + commande.getDemandeSatifaite().getDate());
+
 				System.out.println("");
 			}
 
