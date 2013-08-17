@@ -35,8 +35,8 @@ public class SocieteDAOJPA extends GenericDAOJPA<Societe, Integer> implements So
 		try {
 			TypedQuery<Societe> query = entityManager.createQuery(
 					"SELECT soc FROM Societe soc LEFT JOIN FETCH soc.commandes com JOIN "
-							+ " com.demandeSatifaite JOIN com.demandeSatifaite.concerner WHERE "
-							+ " com.demandeSatifaite.concerner.code= :code", Societe.class);
+							+ " com.session JOIN com.session.seminaire WHERE "
+							+ " com.session.seminaire.code= :code", Societe.class);
 			query.setParameter("code", codeSeminaire);
 
 			list = query.getResultList();

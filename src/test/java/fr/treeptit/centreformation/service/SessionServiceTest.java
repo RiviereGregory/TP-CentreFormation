@@ -39,10 +39,10 @@ public class SessionServiceTest {
 					System.out.println("numero commande:" + commande.getNumero());
 					System.out.println("date:" + commande.getDate());
 					System.out.println("nombres places:" + commande.getNombresPlaces());
-					System.out.println("generer:" + commande.getGenerer());
+					System.out.println("facture:" + commande.getFacture());
 
-					System.out.println("Code societe : " + commande.getPasserCommande().getCode());
-					System.out.println("Nom Societe : " + commande.getPasserCommande().getNom());
+					System.out.println("Code societe : " + commande.getSociete().getCode());
+					System.out.println("Nom Societe : " + commande.getSociete().getNom());
 
 					System.out.println("");
 				}

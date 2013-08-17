@@ -25,7 +25,7 @@ public class Societe implements Serializable {
 	@Column(name = "NomSociete")
 	private String nom;
 
-	@OneToMany(mappedBy = "passerCommande")
+	@OneToMany(mappedBy = "societe")
 	private List<Commande> commandes;
 
 	public Societe() {

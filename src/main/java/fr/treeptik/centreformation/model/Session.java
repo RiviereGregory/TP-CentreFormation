@@ -35,30 +35,30 @@ public class Session implements Serializable {
 	private String heureFin;
 
 	@ManyToOne
-	@JoinColumn(name = "Concerner")
-	private Seminaire concerner;
+	@JoinColumn(name = "SeminaireCode")
+	private Seminaire seminaire;
 
-	@OneToMany(mappedBy = "demandeSatifaite")
+	@OneToMany(mappedBy = "session")
 	private List<Commande> commandes;
 
 	public Session() {
 	}
 
 	public Session(Integer numero, Date date, String heureDebut, String heureFin,
-			Seminaire concerner, List<Commande> commandes) {
+			Seminaire seminaire, List<Commande> commandes) {
 		super();
 		this.numero = numero;
 		this.date = date;
 		this.heureDebut = heureDebut;
 		this.heureFin = heureFin;
-		this.concerner = concerner;
+		this.seminaire = seminaire;
 		this.commandes = commandes;
 	}
 
 	@Override
 	public String toString() {
 		return "Session [numero=" + numero + ", date=" + date + ", heureDebut=" + heureDebut
-				+ ", heureFin=" + heureFin + ", concerner=" + concerner + ", commandes="
+				+ ", heureFin=" + heureFin + ", seminaire=" + seminaire + ", commandes="
 				+ commandes + "]";
 	}
 
@@ -119,12 +119,12 @@ public class Session implements Serializable {
 		this.heureFin = heureFin;
 	}
 
-	public Seminaire getConcerner() {
-		return concerner;
+	public Seminaire getSeminaire() {
+		return seminaire;
 	}
 
-	public void setConcerner(Seminaire concerner) {
-		this.concerner = concerner;
+	public void setSeminaire(Seminaire seminaire) {
+		this.seminaire = seminaire;
 	}
 
 	public List<Commande> getCommandes() {

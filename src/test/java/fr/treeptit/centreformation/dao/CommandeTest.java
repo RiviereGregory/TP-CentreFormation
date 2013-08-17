@@ -29,8 +29,8 @@ public class CommandeTest {
 				System.out.println("numero commande:" + commande.getNumero());
 				System.out.println("date:" + commande.getDate());
 				System.out.println("nombres places:" + commande.getNombresPlaces());
-				System.out.println("generer:" + commande.getGenerer());
-				
+				System.out.println("facture:" + commande.getFacture());
+
 				// Attention au variable détaché (LAZY true)
 				// System.out.println(commande.getPasserCommande());
 				// System.out.println(commande.getDemandeSatifaite());
@@ -42,5 +42,4 @@ public class CommandeTest {
 		}
 
 	}
-
 }

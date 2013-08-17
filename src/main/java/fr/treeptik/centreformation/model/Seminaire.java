@@ -34,7 +34,7 @@ public class Seminaire implements Serializable {
 	@Column(name = "NbrPlacesSeminaire")
 	private Integer nombresPlaces;
 
-	@OneToMany(mappedBy = "concerner")
+	@OneToMany(mappedBy = "seminaire")
 	private List<Session> sessions;
 
 	public Seminaire() {

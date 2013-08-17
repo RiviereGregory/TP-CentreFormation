@@ -31,36 +31,34 @@ public class Commande implements Serializable {
 	private Integer nombresPlaces;
 
 	@ManyToOne
-	@JoinColumn(name = "PasserCommande")
-	private Societe passerCommande;
+	@JoinColumn(name = "SocieteCode")
+	private Societe societe;
 
 	@ManyToOne
-	@JoinColumn(name = "Demande_Satifaite")
-	private Session demandeSatifaite;
+	@JoinColumn(name = "SessionNumero")
+	private Session session;
 
-	@OneToOne
-	@JoinColumn(name = "Generer")
-	private Facture generer;
+	@OneToOne(mappedBy = "commande")
+	private Facture facture;
 
 	public Commande() {
 	}
 
-	public Commande(Integer numero, Date date, Integer nombresPlaces, Societe passerCommande,
-			Session demandeSatifaite, Facture generer) {
+	public Commande(Integer numero, Date date, Integer nombresPlaces, Societe societe,
+			Session session, Facture facture) {
 		super();
 		this.numero = numero;
 		this.date = date;
 		this.nombresPlaces = nombresPlaces;
-		this.passerCommande = passerCommande;
-		this.demandeSatifaite = demandeSatifaite;
-		this.generer = generer;
+		this.societe = societe;
+		this.session = session;
+		this.facture = facture;
 	}
 
 	@Override
 	public String toString() {
 		return "Commande [numero=" + numero + ", date=" + date + ", nombresPlaces=" + nombresPlaces
-				+ ", passerCommande=" + passerCommande + ", demandeSatifaite=" + demandeSatifaite
-				+ ", generer=" + generer + "]";
+				+ ", societe=" + societe + ", session=" + session + ", facture=" + facture + "]";
 	}
 
 	@Override
@@ -112,28 +110,28 @@ public class Commande implements Serializable {
 		this.date = date;
 	}
 
-	public Societe getPasserCommande() {
-		return passerCommande;
+	public Societe getSociete() {
+		return societe;
 	}
 
-	public void setPasserCommande(Societe passerCommande) {
-		this.passerCommande = passerCommande;
+	public void setSociete(Societe societe) {
+		this.societe = societe;
 	}
 
-	public Session getDemandeSatifaite() {
-		return demandeSatifaite;
+	public Session getSession() {
+		return session;
 	}
 
-	public void setDemandeSatifaite(Session demandeSatifaite) {
-		this.demandeSatifaite = demandeSatifaite;
+	public void setDemandeSatifaite(Session session) {
+		this.session = session;
 	}
 
-	public Facture getGenerer() {
-		return generer;
+	public Facture getFacture() {
+		return facture;
 	}
 
-	public void setGenerer(Facture generer) {
-		this.generer = generer;
+	public void setFacture(Facture facture) {
+		this.facture = facture;
 	}
 
 }

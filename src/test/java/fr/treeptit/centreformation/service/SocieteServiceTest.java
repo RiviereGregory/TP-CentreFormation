@@ -36,12 +36,10 @@ public class SocieteServiceTest {
 					System.out.println("numero commande:" + commande.getNumero());
 					System.out.println("date:" + commande.getDate());
 					System.out.println("nombres places:" + commande.getNombresPlaces());
-					System.out.println("generer:" + commande.getGenerer());
+					System.out.println("facture:" + commande.getFacture());
 
-					System.out.println("Numero session : "
-							+ commande.getDemandeSatifaite().getNumero());
-					System.out
-							.println("Date session : " + commande.getDemandeSatifaite().getDate());
+					System.out.println("Numero session : " + commande.getSession().getNumero());
+					System.out.println("Date session : " + commande.getSession().getDate());
 
 					System.out.println("");
 				}
@@ -68,12 +66,10 @@ public class SocieteServiceTest {
 					System.out.println("numero commande:" + commande.getNumero());
 					System.out.println("date:" + commande.getDate());
 					System.out.println("nombres places:" + commande.getNombresPlaces());
-					System.out.println("generer:" + commande.getGenerer());
+					System.out.println("facture:" + commande.getFacture());
 
-					System.out.println("Numero session : "
-							+ commande.getDemandeSatifaite().getNumero());
-					System.out
-							.println("Date session : " + commande.getDemandeSatifaite().getDate());
+					System.out.println("Numero session : " + commande.getSession().getNumero());
+					System.out.println("Date session : " + commande.getSession().getDate());
 
 					System.out.println("");
 				}

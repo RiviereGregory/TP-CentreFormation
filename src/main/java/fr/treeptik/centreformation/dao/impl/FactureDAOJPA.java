@@ -25,8 +25,7 @@ public class FactureDAOJPA extends GenericDAOJPA<Facture, Integer> implements Fa
 		try {
 			TypedQuery<Facture> query = entityManager.createQuery(
 					"SELECT fac FROM Facture fac JOIN fac.commande com JOIN "
-							+ " com.demandeSatifaite WHERE com.demandeSatifaite.date = :date",
-					Facture.class);
+							+ " com.session WHERE com.session.date = :date", Facture.class);
 			query.setParameter("date", date);
 
 			list = query.getResultList();
