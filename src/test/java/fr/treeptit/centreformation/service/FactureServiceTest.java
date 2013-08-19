@@ -17,7 +17,7 @@ import fr.treeptik.centreformation.model.Facture;
 import fr.treeptik.centreformation.service.FactureService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:/applicationContext.xml" })
+@ContextConfiguration(locations = { "classpath:/applicationContextTest.xml" })
 public class FactureServiceTest {
 
 	@Autowired

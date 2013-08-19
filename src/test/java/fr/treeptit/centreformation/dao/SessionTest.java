@@ -14,7 +14,7 @@ import fr.treeptik.centreformation.exception.DAOException;
 import fr.treeptik.centreformation.model.Session;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:/applicationContext.xml" })
+@ContextConfiguration(locations = { "classpath:/applicationContextTest.xml" })
 public class SessionTest {
 	@Autowired
 	private SessionDAO sessionDAO;
