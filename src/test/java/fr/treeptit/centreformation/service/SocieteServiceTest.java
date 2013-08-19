@@ -16,7 +16,7 @@ import fr.treeptik.centreformation.model.Societe;
 import fr.treeptik.centreformation.service.SocieteService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:/applicationContext.xml" })
+@ContextConfiguration(locations = { "classpath:/applicationContextTest.xml" })
 public class SocieteServiceTest {
 
 	@Autowired

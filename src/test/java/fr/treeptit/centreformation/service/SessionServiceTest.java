@@ -18,7 +18,7 @@ import fr.treeptik.centreformation.model.Session;
 import fr.treeptik.centreformation.service.SessionService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:/applicationContext.xml" })
+@ContextConfiguration(locations = { "classpath:/applicationContextTest.xml" })
 public class SessionServiceTest {
 
 	@Autowired

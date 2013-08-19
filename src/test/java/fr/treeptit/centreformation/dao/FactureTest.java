@@ -14,7 +14,7 @@ import fr.treeptik.centreformation.exception.DAOException;
 import fr.treeptik.centreformation.model.Facture;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:/applicationContext.xml" })
+@ContextConfiguration(locations = { "classpath:/applicationContextTest.xml" })
 public class FactureTest {
 
 	@Autowired

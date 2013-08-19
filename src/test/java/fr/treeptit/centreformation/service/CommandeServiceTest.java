@@ -17,7 +17,7 @@ import fr.treeptik.centreformation.model.Commande;
 import fr.treeptik.centreformation.service.CommandeService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:/applicationContext.xml" })
+@ContextConfiguration(locations = { "classpath:/applicationContextTest.xml" })
 public class CommandeServiceTest {
 
 	@Autowired
