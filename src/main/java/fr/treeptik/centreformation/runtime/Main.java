@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// Ajout commentaire
+		// Ajout commentaire eclipse
 		System.out.println("*");
 		System.out.println("*");
 		System.out.println("*");
@@ -22,9 +22,9 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 
 		String line = scanner.nextLine();
-		
+
 		System.out.println(line);
-		
+
 		scanner.close();
 	}
 
