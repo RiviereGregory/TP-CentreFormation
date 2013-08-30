@@ -4,7 +4,7 @@
 	<groupId>fr.treeptik</groupId>
 	<artifactId>centreformation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<name>centreformation</name>
 	<description>TP java pour illustrer spring - hibernate - maven</description>
 
@@ -12,7 +12,7 @@
 		<version.java>1.7</version.java>
 		<hibernate.version>4.2.3.Final</hibernate.version>
 		<spring.version>3.2.3.RELEASE</spring.version>
-<!-- 		<version.maven.jar.plugin>2.4</version.maven.jar.plugin> -->
+		<!-- <version.maven.jar.plugin>2.4</version.maven.jar.plugin> -->
 		<version.maven.exec.plugin>1.2.1</version.maven.exec.plugin>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -158,6 +158,7 @@
 				dans les ressources grace à ${nom.variable} -->
 			<resource>
 				<directory>src/main/resources</directory>
+				<!-- a mettre que si on utilise des variable $ dans les fichiers ressources -->
 				<filtering>true</filtering>
 			</resource>
 			<resource>
